@@ -1,4 +1,4 @@
-# CodeBuddies
+# Code Buddies
 To run locally
 
 ```
