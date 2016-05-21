@@ -17,7 +17,14 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
+  .run(function($rootScope, $timeout) {
+    $rootScope.$on('$viewContentLoaded', () => {
+      $timeout(() => {
+        componentHandler.upgradeAllRegistered();
+      })
+    })
+  })
+  .config(function($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
