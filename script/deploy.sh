@@ -1,0 +1,2 @@
+grunt build
+firebase deploy
