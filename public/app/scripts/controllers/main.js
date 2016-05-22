@@ -14,12 +14,9 @@ angular.module('publicApp')
 
   if (!window.firebase || !(firebase.app instanceof Function) ) 
   {
-    window.alert('You have not configured and imported the Firebase SDK. ' +
+    window.alert('Again: You have not configured and imported the Firebase SDK. ' +
       'Make sure you go through the codelab setup instructions.');
     return false ;
   }
-
-  // Just kick the Singlleton
-  var theApp = CodeBuddiesGlobalStatus.firebaseApp.get() ;
 
 }]) ;

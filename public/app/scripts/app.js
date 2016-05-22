@@ -33,7 +33,7 @@ codeBuddiesApp.factory( 'CodeBuddiesGlobalStatus', [function()
     },
     
     isLoggedIn: false,
-    firebaseApp: null,
+    onAuthChanged: null 
   }
 
   o.firebaseApp = (function()
@@ -51,34 +51,63 @@ codeBuddiesApp.factory( 'CodeBuddiesGlobalStatus', [function()
       }
     } ;
   })() ;
-  
+ 
+  o.onAuthStateChanged = (function( user )
+  {
+    var this_o = o ;
+
+    if ( user )
+    {
+      console.log('logged in: ' + user.displayName) ;
+      this_o.isLoggedIn = user ;
+    }
+    else
+    {
+      console.log('logged out!' ) ;  
+      this_o.isLoggedIn = null ;
+    }
+  }) ;
+
+  o.firebaseApp.get().auth().onAuthStateChanged( o.onAuthStateChanged ) ;
+
+  //window.CodeBuddiesGlobalStatus = o ;
   return o ;
 }]) ;
 
 
-codeBuddiesApp.run([ '$rootScope', '$timeout', '$location', 'CodeBuddiesGlobalStatus', 
-function($rootScope, $timeout, $location, CodeBuddiesGlobalStatus) {
+codeBuddiesApp.run([ '$rootScope', '$timeout', '$location', 'CodeBuddiesGlobalStatus', '$templateCache',
+function($rootScope, $timeout, $location, CodeBuddiesGlobalStatus, $templateCache ) {
   $rootScope.$on('$viewContentLoaded', () => {
     $timeout(() => {
       componentHandler.upgradeAllRegistered();
     })
   })
 
+  $templateCache.removeAll() ;
   // redirect to login if user is not logged in yet
   $rootScope.$on( "$routeChangeStart", function(event, next, current) {
+    
+    // no logged user, we should be going to #login
     if ( !CodeBuddiesGlobalStatus.isLoggedIn ) 
     {
-      // no logged user, we should be going to #login
       if ( next.templateUrl != "views/login.html" ) 
       {
         $location.path( "/login" );
       }
-    }         
+    }
+    // a user is already logged in, no need to go there 
+    else
+    {
+      if ( next.templateUrl == "views/login.html" ) 
+      {
+        $location.path( "/chat" );
+      }
+    }
   });
 
 }]) ;
 
-codeBuddiesApp.config(function($routeProvider) {
+codeBuddiesApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'views/main.html',
@@ -98,5 +127,5 @@ codeBuddiesApp.config(function($routeProvider) {
     .otherwise({
       redirectTo: '/'
     });
-});
+}]);
 
