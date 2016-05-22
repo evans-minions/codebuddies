@@ -17,7 +17,14 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
+  .run(function($rootScope, $timeout) {
+    $rootScope.$on('$viewContentLoaded', () => {
+      $timeout(() => {
+        componentHandler.upgradeAllRegistered();
+      })
+    })
+  })
+  .config(function($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -29,10 +36,10 @@ angular
         controller: 'LoginCtrl',
         controllerAs: 'login'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .when('/chat', {
+        templateUrl: 'views/chat.html',
+        controller: 'ChatCtrl',
+        controllerAs: 'chat'
       })
       .otherwise({
         redirectTo: '/'
