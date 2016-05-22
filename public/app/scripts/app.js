@@ -18,8 +18,8 @@ angular
     'ngTouch'
   ])
   .run(function($rootScope, $timeout) {
-    $rootScope.$on('$viewContentLoaded', () => {
-      $timeout(() => {
+    $rootScope.$on('$viewContentLoaded', function() {
+      $timeout(function() {
         componentHandler.upgradeAllRegistered();
       })
     })
@@ -35,6 +35,12 @@ angular
         templateUrl: 'views/chat.html',
         controller: 'ChatCtrl',
         controllerAs: 'chat'
+      })
+      .when('/dashboard', {
+        templateUrl: 'views/dashboard.html'
+      })
+      .when('/createquestion', {
+        templateUrl: 'views/createquestion.html'
       })
       .otherwise({
         redirectTo: '/'

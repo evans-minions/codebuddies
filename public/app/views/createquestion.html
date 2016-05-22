@@ -1,47 +1,29 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../styles/main.css">
-    </head>
-    <body id="createqustion">
-        <nav>
-            <ul class="nav nav-pills pull-right">
-                <li role="presentation"><a href="#"><span><img src="https://slack-imgs.com/?c=1&url=https%3A%2F%2Frobohash.org%2FCodeBuddies" width="44px;"></span>Taro-San</a></li>
-            </ul>
-        </nav>
-        <div class="row">
-            <h1>
-                <center>Code Buddies</center>
-            </h1>
-            <h2>
-                <center>Create Your Questions</center>
-            </h2>
-            <div class="selectArea">
-                <p>
-                <center>Ask codebuddies anything.</center>
-                </p>
-                <div>
-                    <select class="form-control">
-                        <option>Choose programming languages of your question</option>
-                        <option>Java</option>
-                        <option>Python</option>
-                        <option>Go</option>
-                        <option>Ruby</option>
-                        <option>PHP</option>
-                    </select>
-                </div>
-                <div class="btn-lenth">
-                    <a href="./chat.html">
-                        <button type="button" class="btn btn-block btn-green">
-                            <center>Start Chat with your CodeBuddy</center>
-                        </button>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+<div id="createqustion">
+  <div class="row">
+    <h2>
+        <center>Create Your Questions</center>
+    </h2>
+    <div class="selectArea">
+      <p>
+        <center>Ask codebuddies anything.</center>
+      </p>
+      <div>
+        <select class="form-control">
+          <option>Choose programming languages of your question</option>
+          <option>Java</option>
+          <option>Python</option>
+          <option>Go</option>
+          <option>Ruby</option>
+          <option>PHP</option>
+        </select>
+      </div>
+      <div class="btn-lenth">
+        <a href="./chat.html">
+          <button type="button" class="btn btn-block btn-green">
+            <center><a ng-href="#/chat" style="color: #fff;">Start Chat with your CodeBuddy</a></center>
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
