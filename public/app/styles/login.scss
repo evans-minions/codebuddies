@@ -1,14 +1,4 @@
-body {
-  font-family: Roboto, Arial, sans-serif;
-  background: #ECEFF1;
-  color: rgba(0,0,0,0.87);
-}
-
-a {
-  color: rgb(3,155,229);
-}
-
-#message {
+#login_message {
   max-width: 400px;
   margin: 40px auto;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12);
@@ -17,26 +7,26 @@ a {
   padding: 16px 24px;
 }
 
-#message h1 {
+#login_message h1 {
   font-size: 22px;
   font-weight: 500;
   text-align: center;
   margin: 0 0 16px;
 }
 
-#message p {
+#login_message p {
   font-weight: 300;
   line-height: 150%;
 }
 
-#message ul {
+#login_message ul {
   list-style: none;
   margin: 16px 0 0;
   padding: 0;
   text-align: center;
 }
 
-#message li a {
+#login_message li a {
   display: inline-block;
   padding: 8px;
   text-transform: uppercase;
@@ -48,4 +38,33 @@ a {
   border-radius: 3px;
   font-size: 14px;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+}
+
+#user-container {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  top: 22px;
+  width: 100%;
+  right: 0;
+  padding-left: 10px;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+#user-container #user-pic {
+  top: -3px;
+  position: relative;
+  display: inline-block;
+  background-image: url('/images/profile_placeholder.png');
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  background-size: 40px;
+  border-radius: 20px;
+}
+#user-container #user-name {
+  font-size: 16px;
+  line-height: 36px;
+  padding-right: 10px;
+  padding-left: 20px;
 }

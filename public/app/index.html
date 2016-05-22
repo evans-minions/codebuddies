@@ -12,13 +12,19 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/login.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/chat.css">
-    <!-- <link rel="stylesheet" href="styles/login.css"> -->
     <!-- endbuild -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+ 
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/0.4.0/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/0.4.0/firebase-ui-auth.css" />
+  
   </head>
   <body ng-app="publicApp">
     <!--[if lte IE 8]>
@@ -37,19 +43,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-
           <a class="navbar-brand" href="#/">public</a>
         </div>
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/chat">Chat</a></li>
-              <li><a ng-href="#/login">Login</a></li>
-            </ul>
-          </div>
+
+        <div class="collapse navbar-collapse" id="js-navbar-collapse">
+          <ul class="nav navbar-nav">
+            <!--<li class="active"><a href="#/">Home</a></li>-->
+            <li><a ng-href="#/chat">Chat</a></li>
+            <li><a ng-href="#/login">Login</a></li>
+          </ul>
         </div>
       </div>
-    </div>
+    </dev>
   </div>
 
   <div class="container2">
@@ -80,17 +85,8 @@
   <script src="scripts/controllers/login.js"></script>
   <!-- endbuild -->
 
-
     <!-- endbuild -->
   <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyA5MEhTD1k1VAj0eRbsFaCa8R_RPxpKa84",
-      authDomain: "codebuddiesapp-miko.firebaseapp.com",
-      databaseURL: "https://codebuddiesapp-miko.firebaseio.com",
-      storageBucket: "codebuddiesapp-miko.appspot.com",
-    };
-    firebase.initializeApp(config);
   </script>
 </body>
 

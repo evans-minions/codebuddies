@@ -127,34 +127,34 @@ main, #messages-card {
   background: linear-gradient(white, #f9f9f9);
   justify-content: space-between;
 }
-#user-container {
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  top: 22px;
-  width: 100%;
-  right: 0;
-  padding-left: 10px;
-  justify-content: flex-end;
-  padding-right: 10px;
-}
-#user-container #user-pic {
-  top: -3px;
-  position: relative;
-  display: inline-block;
-  background-image: url('/images/profile_placeholder.png');
-  background-repeat: no-repeat;
-  width: 40px;
-  height: 40px;
-  background-size: 40px;
-  border-radius: 20px;
-}
-#user-container #user-name {
-  font-size: 16px;
-  line-height: 36px;
-  padding-right: 10px;
-  padding-left: 20px;
-}
+// #user-container {
+//   position: absolute;
+//   display: flex;
+//   flex-direction: row;
+//   top: 22px;
+//   width: 100%;
+//   right: 0;
+//   padding-left: 10px;
+//   justify-content: flex-end;
+//   padding-right: 10px;
+// }
+// #user-container #user-pic {
+//   top: -3px;
+//   position: relative;
+//   display: inline-block;
+//   background-image: url('/images/profile_placeholder.png');
+//   background-repeat: no-repeat;
+//   width: 40px;
+//   height: 40px;
+//   background-size: 40px;
+//   border-radius: 20px;
+// }
+// #user-container #user-name {
+//   font-size: 16px;
+//   line-height: 36px;
+//   padding-right: 10px;
+//   padding-left: 20px;
+// }
 #image-form #submitImage {
   width: auto;
   padding: 0 6px 0 1px;

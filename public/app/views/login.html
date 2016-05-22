@@ -1,68 +1,15 @@
-<style media="screen">
-  body {
-    font-family: Roboto, Arial, sans-serif;
-    background: #ECEFF1;
-    color: rgba(0,0,0,0.87);
-  }
 
-  a {
-    color: rgb(3,155,229);
-  }
-
-  #message {
-    max-width: 400px;
-    margin: 40px auto;
-    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12);
-    border-radius: 2px;
-    background: white;
-    padding: 16px 24px;
-  }
-
-  #message h1 {
-    font-size: 22px;
-    font-weight: 500;
-    text-align: center;
-    margin: 0 0 16px;
-  }
-
-  #message p {
-    font-weight: 300;
-    line-height: 150%;
-  }
-
-  #message ul {
-    list-style: none;
-    margin: 16px 0 0;
-    padding: 0;
-    text-align: center;
-  }
-
-  #message li a {
-    display: inline-block;
-    padding: 8px;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: 500;
-    background: rgb(3,155,229);
-    color: white;
-    border: 1px solid rgb(3,155,229);
-    border-radius: 3px;
-    font-size: 14px;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
-  }
-</style>
-
-<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/ui/0.4.0/firebase-ui-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
-<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/0.4.0/firebase-ui-auth.css" />
-
-<script>
-</script>
-
-<div id="message">
-  <h1>Welcome to CodeBuddies</h1>
-  <p>On successful login you will get directed to Yahoo.com </p>
+<div id="login_message">
+  <h1>Welcome to Code Buddies</h1>
+  <div id="user-container">
+    <div hidden id="user-pic"></div>
+    <div hidden id="user-name"></div>
+    <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+      Sign-out
+    </button>
+    <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+      <i class="material-icons">account_circle</i>Sign-in with Google
+    </button>
+  </div>
   <div id="firebaseui-auth-container"></div>
 </div>

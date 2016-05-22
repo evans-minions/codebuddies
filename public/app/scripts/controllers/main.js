@@ -7,11 +7,19 @@
  * # MainCtrl
  * Controller of the publicApp
  */
+
+
 angular.module('publicApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+.controller('MainCtrl', [ 'CodeBuddiesGlobalStatus', function(CodeBuddiesGlobalStatus) { 
+
+  if (!window.firebase || !(firebase.app instanceof Function) ) 
+  {
+    window.alert('You have not configured and imported the Firebase SDK. ' +
+      'Make sure you go through the codelab setup instructions.');
+    return false ;
+  }
+
+  // Just kick the Singlleton
+  var theApp = CodeBuddiesGlobalStatus.firebaseApp.get() ;
+
+}]) ;
