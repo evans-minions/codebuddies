@@ -42,6 +42,9 @@ angular
       .when('/createquestion', {
         templateUrl: 'views/createquestion.html'
       })
+      .when('/rating', {
+        templateUrl: 'views/rating.html'
+      })
       .otherwise({
         redirectTo: '/'
       });
